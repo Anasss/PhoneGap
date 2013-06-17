@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+	
+    document.addEventListener("deviceready", creertable, false);
+	
+    var db= window.openDatabase("mabase", "1.0", "mabase1", 200000);
+	
+	function creertable() {
+		db= window.openDatabase("mabase", "1.0", "mabase1", 200000);
+        db.transaction(function(tx) {tx.executeSql('CREATE TABLE IF NOT EXISTS MEMO (id INTEGER PRIMARY KEY AUTOINCREMENT,memoire,datememo)');},function(){alert("erreur");},function(){});	
+		afficher();
+    }
+	
+	function afficher()
+   {
+	   db.transaction(function(tx){ tx.executeSql("SELECT * FROM MEMO", [], parcourir, function(){alert("erreur");});}, function(){alert("erreur");},function(){});
+   }    
+
+   function parcourir(tx, results){
+       var len = results.rows.length;
+	   var s="<br> <hr>";
+       for (var i=0; i<len; i++){
+		   s+="<table width='100%'><tr><a href='modifier.html?id="+results.rows.item(i).id+"' style='text-decoration:none'><td>"+results.rows.item(i).datememo+"</td></a><td align='right'><input type='button' value='X' onclick='supprimer(this.id)' id='"+results.rows.item(i).id+"'></td></tr></table><a href='modifier.html?id="+results.rows.item(i).id+"' style='text-decoration:none'><div style='width:70%;overflow:hidden'>"+results.rows.item(i).memoire+"</div></a><hr>"; 
+           } 
+    	  document.getElementById("afficher").innerHTML=s;
+   }
+   
+    
+   function supprimer(id)
+   {
+	    var c=confirm("Supprimer ?");
+	   if(c==true)
+	   {
+	   db.transaction(function(tx){tx.executeSql("delete from MEMO where id='"+id+"'");},function(){alert("erreur");},function(){afficher();});}}
+   
+    </script>
+  </head>
+  <body background="hd.jpg">
+<form action="ajouter.html">
+<input type="submit" style="width:100%;height:50px;font-size:24px;font-family:'Comic Sans MS', cursive" value="Ajouter memo">
+</form>
+<div id="afficher" style="width:100%"></div>
+  </body>
+</html>

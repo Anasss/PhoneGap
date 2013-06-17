@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>PhoneGap Back Button Example</title>
+ 
+<script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+var myMedia = null;
+var playing = false;
+function playAudio() {
+if (!playing) {
+myMedia.play();	
+document.getElementById('play').src = "DogDj.gif";
+playing = true;	
+} else {
+myMedia.pause();
+document.getElementById('play').src = "start.png";
+playing = false;
+}
+}
+ 
+function stopAudio() {
+myMedia.stop();
+playing = false;
+document.getElementById('play').src = "start.png";
+document.getElementById('audio_position').innerHTML = "0.000 sec";
+}
+ 
+function onLoad() {
+document.addEventListener("deviceready", onDeviceReady, false);
+}
+function onDeviceReady(){
+console.log("Got device ready");
+updateMedia();
+}
+function updateMedia(src) {
+// Clean up old file
+if (myMedia != null) {
+myMedia.release();
+}
+// Get the new media file
+var yourSelect = document.getElementById('playlist');	
+myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
+ 
+// Update media position every second
+var mediaTimer = setInterval(function() {
+// get media position
+myMedia.getCurrentPosition(
+// success callback
+function(position) {
+if (position > -1) {
+document.getElementById('audio_position').innerHTML = (position/1000) + " sec";
+}
+},
+// error callback
+function(e) {
+console.log("Error getting pos=" + e);
+}
+);
+}, 1000);
+}
+ 
+function setAudioPosition(position) {
+document.getElementById('audio_position').innerHTML =position;
+}
+</script>
+<body onload="onLoad()"  style="background-color: activecaption">
+<center>
+    <h1 style="color: cornflowerblue">Ahmed MP3</h1>
+    <p id="audio_position" style="color: salmon">0.000 sec</p>
+<p>
+    <select id="playlist" onchange="updateMedia()" style="color: chocolate">
+<option checked value="/android_asset/www/Kalimba.mp3" style="color: chocolate">Asset</option>
+<option value="test.mp3" style="color: chocolate">SD Card</option>
+<option value="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3" style="color: chocolate">Internet</option>
+</select>
+</p>
+<p>
+    <img id="play" src="DogDj.gif" style="background-size: 30">
+</p>
+<a href="#" onclick="playAudio()"><img id="play" src="start.png"></a>
+<a href="#" onclick="stopAudio()"><img id="stop" src="stop.png"></a>
+</center>
+</body>
+</html>

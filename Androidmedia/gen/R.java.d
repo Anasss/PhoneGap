@@ -1,0 +1,23 @@
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\gen\org\apache\cordova\example\R.java \
+ : C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-hdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-hdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-ldpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-ldpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-mdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-mdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-xhdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\drawable-xhdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\layout\main.xml \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\values\strings.xml \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\res\xml\config.xml \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-hdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-hdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-ldpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-ldpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-mdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-mdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-xhdpi\icon.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\res\drawable-xhdpi\ic_launcher.png \
+C:\Users\AHMED\Documents\NetBeansProjects\Androidmedia\bin\AndroidManifest.xml \
